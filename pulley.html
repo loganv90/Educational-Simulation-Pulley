@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href = "./styles/style.css">
+      <link rel="stylesheet" href="./styles/reset.css" >
+      <link rel="stylesheet" href="./styles/styl.css">
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="./js/p5.min.js"></script>
+      <script src="./js/pulley.js"></script>
+      <script src="./js/graph.js"></script>
+      <script src="./js/pulleyInput.js" defer></script>
+      <title>Optical Diagnostics Group | MecE265</title>
+    </head>
+    <body>
+      <div id="header">
+        <div id="header_in">
+          <h1><a href="NOBES_MecE_265.html"><b>NOBES<br>SOLIDWORKS</b></a></h1>
+          <div id="menu">
+            <ul>
+              <li><a href="NOBES_MecE_265.html">MecE 265</a></li>
+              <li><a href="NOBES_MecE_468.html">MecE 468</a></li>
+              <li><a href="NOBES_CSWA.html">CSWA/CSWP</a></li>
+              <li><a href="NOBES_SIM.html" class="active">Simulations</a></li>
+              <li><a href="NOBES_SW_Tutorials.html">SW Tutorials</a></li>
+              <li><a href="NOBES_SW.html">Extra Resources</a></li>
+              <li><a href="NOBES_Quiz.html">Quiz</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="main_part_inner">
+        <div id="main_part_inner_in">
+          <h2>Beam Deflection Simulation</h2>
+        </div>
+      </div>
+
+      <noscript>
+        <style type="text/css">
+          #content_inner {display: none};
+        </style>
+        This page requires javascript to be enabled or a javascript able browser.
+      </noscript>
+
+      <br></br>
+
+      <div id="content-inner">
+        <div id="level1">
+          <div id="intro-container">
+            <b>INTRODUCTION:</b>
+            <br></br>
+            !!!<br>
+            !!!<br>
+            <br></br>
+            Controls:
+            <br></br>
+            <ul>
+              <li>- !!!</li>
+              <li>- !!!</li>
+            </ul>
+            <br></br>
+          </div>
+        </div>
+
+        <div id="level2">
+          <div id="p5-simulation-container"></div>
+
+          <div id="level2-stack">
+            <div id="input-container">
+              <p><b>INPUT:</b></p><br></br>
+
+              <label class="input-label" for="num-select">Number of Pulleys:</label><br>
+              <select id="num-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="4.2">4.2</option>
+              </select>
+
+              <br><br></br>
+
+              <label class="input-label" for="input-F">1: </label><br>
+              <input class="input-box" type="text" value="1" id="input-F">
+              <input class="input-slider" type="range" min="-100" max="100" value="50" id="slider-F"><br></br>
+
+              <label class="input-label" for="input-W">2: </label><br>
+              <input class="input-box" type="text" value="2" id="input-W">
+              <input class="input-slider" type="range" min="-100" max="100" value="50" id="slider-W"><br></br>
+            </div>
+
+            <div id="p5-graph-container"></div>
+          </div>
+        </div>
+
+        <div id="level3">
+          <div id="output-container">
+            <b>EQUATIONS:</b>
+            <br></br>
+            !!!<br>
+            !!!<br>
+            <br></br>
+            <div id="output-calculations" style="font-size: 12px"></div><br></br>
+            <br></br>
+            The equations are only valid if these assumptions are satisfied:
+            <br></br>
+            <ul>
+              <li>- !!!</li>
+              <li>- !!!</li>
+            </ul>
+            <br></br>
+          </div>
+        </div>
+      </div>
+
+      <br></br>
+
+      <div id="footer">
+        <div id="footer_in">
+          <p>Copyright © 2016 <a href="#">Optical Diagnostics Group</a>. All Rights Reserved</p>
+          <span>Design By: Bianca Angotti and Carmen Leung</span> <br>
+          <p></p>
+          <span>Simulation By: Logan Vaughan</span>
+        </div>
+      </div>
+    </body>
+</html>
