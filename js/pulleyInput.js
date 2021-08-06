@@ -1,7 +1,13 @@
 let numSelect;
+let dimSwitch;
+let equSwitch;
+let forSwitch;
 
 window.onload = () => {
   numSelect = document.querySelector("#num-select");
+  dimSwitch = document.querySelector("#Dim-Switch");
+  equSwitch = document.querySelector("#Equ-Switch");
+  forSwitch = document.querySelector("#For-Switch");
 
   plot1 = new Plot(10, 100, 182, 50, color(0, 0, 200));
   plot2 = new Plot(10, 200, 182, 150, color(0, 200, 0));

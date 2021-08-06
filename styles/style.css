@@ -92,6 +92,10 @@
   width: 120px;
 }
 
+.input-select {
+  width: 50px;
+}
+
 /* --MULTIPLE CHOICE-- */
 .question {
   padding: 5px;

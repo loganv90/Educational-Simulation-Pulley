@@ -72,20 +72,30 @@ function drawP1() {
   rect(0, 750, 600, 800);
 
   // drawing dimensions
-  drawDimension(pulley1.y, weight.y-10, pulley1.x-pulley1.radius-30, "S", "b");
-  drawDimension(pulley1.y, pulley1.y+pulleyRope.defaultLength+50, pulley1.x+pulley1.radius+30, "S", "a");
-  drawArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, 0);
+  if (dimSwitch.checked) {
+    drawDimension(pulley1.y, weight.y-10, pulley1.x-pulley1.radius-30, "S", "b");
+    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "S", "a");
+    drawArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, 0);
+  }
 
   // drawing equations
-  textAlign(LEFT, CENTER);
-  textSize(14);
-  fill(120, 0, 120);
-  stroke(120, 0, 120);
-  text("L = Rope Length", 350, 300);
-  text("R = Red Dimensions", 350, 320);
-  text("L = R + Sa + Sb", 350, 380);
-  text("0 = Va + Vb", 350, 400);
-  text("0 = Aa + Ab", 350, 420);
+  if (equSwitch.checked) {
+    textAlign(LEFT, CENTER);
+    textSize(14);
+    fill(120, 0, 120);
+    stroke(120, 0, 120);
+    text("L = Rope Length", 350, 300);
+    text("R = Red Dimensions", 350, 320);
+    text("L = R + Sa + Sb", 350, 380);
+    text("0 = Va + Vb", 350, 400);
+    text("0 = Aa + Ab", 350, 420);
+  }
+
+  // drawing forces
+  if (forSwitch.checked) {
+    drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
+    drawArrow(weight.x+20, weight.y-10, weight.x+20, weight.y-80);
+  }
 }
 
 /**
@@ -125,21 +135,31 @@ function drawP2() {
   rect(0, 750, 600, 800);
 
   // drawing dimensions
-  drawDimension(pulley1.y+pulley1.radius*2, pulley2.y, pulley1.x-pulley1.radius-30, "S", "b");
-  drawDimension(pulley1.y, pulley1.y+pulleyRope.defaultLength+50, pulley1.x+pulley1.radius+30, "S", "a");
-  drawArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, 0, pulley1.radius*2);
-  drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI);
+  if (dimSwitch.checked) {
+    drawDimension(pulley1.y+pulley1.radius*2, pulley2.y, pulley1.x-pulley1.radius-30, "S", "b");
+    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "S", "a");
+    drawArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, 0, pulley1.radius*2);
+    drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI);
+  }
 
   // drawing equations
-  textAlign(LEFT, CENTER);
-  textSize(14);
-  fill(120, 0, 120);
-  stroke(120, 0, 120);
-  text("L = Rope Length", 350, 300);
-  text("R = Red Dimensions", 350, 320);
-  text("L = R + Sa + 2*Sb", 350, 380);
-  text("0 = Va + 2*Vb", 350, 400);
-  text("0 = Aa + 2*Ab", 350, 420);
+  if (equSwitch.checked) {
+    textAlign(LEFT, CENTER);
+    textSize(14);
+    fill(120, 0, 120);
+    stroke(120, 0, 120);
+    text("L = Rope Length", 350, 300);
+    text("R = Red Dimensions", 350, 320);
+    text("L = R + Sa + 2*Sb", 350, 380);
+    text("0 = Va + 2*Vb", 350, 400);
+    text("0 = Aa + 2*Ab", 350, 420);
+  }
+
+  // drawing forces
+  if (forSwitch.checked) {
+    drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
+    drawArrow(weight.x+70, weight.y+70, weight.x+70, weight.y);
+  }
 }
 
 /**
@@ -183,22 +203,32 @@ function drawP3() {
   rect(0, 750, 600, 800);
 
   // drawing dimensions
-  drawDimension(pulley3.y, pulley2.y-pulley2.radius*2, pulley1.x-pulley1.radius-30, "S", "b");
-  drawDimension(pulley1.y, pulley1.y+pulleyRope.defaultLength+50, pulley1.x+pulley1.radius+30, "S", "a");
-  drawArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, 0, pulley1.radius*2);
-  drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI, -pulley2.radius*2, -pulley2.radius*2);
-  drawArc(pulley3.x, pulley3.y, pulley3.radius+10, PI, 0);
+  if (dimSwitch.checked) {
+    drawDimension(pulley3.y, pulley2.y-pulley2.radius*2, pulley1.x-pulley1.radius-30, "S", "b");
+    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "S", "a");
+    drawArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, 0, pulley1.radius*2);
+    drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI, -pulley2.radius*2, -pulley2.radius*2);
+    drawArc(pulley3.x, pulley3.y, pulley3.radius+10, PI, 0);
+  }
 
   // drawing equations
-  textAlign(LEFT, CENTER);
-  textSize(14);
-  fill(120, 0, 120);
-  stroke(120, 0, 120);
-  text("L = Rope Length", 350, 300);
-  text("R = Red Dimensions", 350, 320);
-  text("L = R + Sa + 3*Sb", 350, 380);
-  text("0 = Va + 3*Vb", 350, 400);
-  text("0 = Aa + 3*Ab", 350, 420);
+  if (equSwitch.checked) {
+    textAlign(LEFT, CENTER);
+    textSize(14);
+    fill(120, 0, 120);
+    stroke(120, 0, 120);
+    text("L = Rope Length", 350, 300);
+    text("R = Red Dimensions", 350, 320);
+    text("L = R + Sa + 3*Sb", 350, 380);
+    text("0 = Va + 3*Vb", 350, 400);
+    text("0 = Aa + 3*Ab", 350, 420);
+  }
+
+  // drawing forces
+  if (forSwitch.checked) {
+    drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
+    drawArrow(weight.x+70, weight.y+70, weight.x+70, weight.y);
+  }
 }
 
 /**
@@ -246,23 +276,33 @@ function drawP4() {
   rect(0, 750, 600, 800);
 
   // drawing dimensions
-  drawDimension(pulley3.y+pulley3.radius*2, pulley2.y-pulley2.radius*2, pulley1.x-pulley1.radius-30, "S", "b");
-  drawDimension(pulley1.y, pulley1.y+pulleyRope.defaultLength+50, pulley1.x+pulley1.radius+30, "S", "a");
-  drawArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, 0, pulley1.radius*2+pulley3.radius*2);
-  drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI, -pulley2.radius*2, -pulley2.radius*2);
-  drawArc(pulley3.x, pulley3.y, pulley3.radius+10, PI, 0, pulley3.radius*2, pulley3.radius*2);
-  drawArc(pulley4.x, pulley4.y, pulley4.radius+10, 0, PI);
+  if (dimSwitch.checked) {
+    drawDimension(pulley3.y+pulley3.radius*2, pulley2.y-pulley2.radius*2, pulley1.x-pulley1.radius-30, "S", "b");
+    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "S", "a");
+    drawArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, 0, pulley1.radius*2+pulley3.radius*2);
+    drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI, -pulley2.radius*2, -pulley2.radius*2);
+    drawArc(pulley3.x, pulley3.y, pulley3.radius+10, PI, 0, pulley3.radius*2, pulley3.radius*2);
+    drawArc(pulley4.x, pulley4.y, pulley4.radius+10, 0, PI);
+  }
 
   // drawing equations
-  textAlign(LEFT, CENTER);
-  textSize(14);
-  fill(120, 0, 120);
-  stroke(120, 0, 120);
-  text("L = Rope Length", 350, 300);
-  text("R = Red Dimensions", 350, 320);
-  text("L = R + Sa + 4*Sb", 350, 380);
-  text("0 = Va + 4*Vb", 350, 400);
-  text("0 = Aa + 4*Ab", 350, 420);
+  if (equSwitch.checked) {
+    textAlign(LEFT, CENTER);
+    textSize(14);
+    fill(120, 0, 120);
+    stroke(120, 0, 120);
+    text("L = Rope Length", 350, 300);
+    text("R = Red Dimensions", 350, 320);
+    text("L = R + Sa + 4*Sb", 350, 380);
+    text("0 = Va + 4*Vb", 350, 400);
+    text("0 = Aa + 4*Ab", 350, 420);
+  }
+
+  // drawing forces
+  if (forSwitch.checked) {
+    drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
+    drawArrow(weight.x+70, weight.y+70, weight.x+70, weight.y);
+  }
 }
 
 /**
@@ -299,6 +339,7 @@ function drawP4() {
   weight.show();
 
   // drawing frame
+  stroke(0);
   fill(0);
   circle(pulley1.x, pulley1.y, 10);
   circle(pulley3.x, pulley3.y, 10);
@@ -315,28 +356,51 @@ function drawP4() {
   line(pulley3.x, pulley3.y, pulley3.x, pulley3.y-pulley3.radius);
   line(pulley4.x, pulley4.y, pulley4.x, pulley4.y-pulley4.radius);
 
-  /*
   // drawing dimensions
-  drawDimension(pulley3.y+pulley3.radius*2, pulley2.y-pulley2.radius*2, pulley1.x-pulley1.radius-30, "S", "b");
-  drawDimension(pulley1.y, pulley1.y+pulleyRope.defaultLength+50, pulley1.x+pulley1.radius+30, "S", "a");
-  drawArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, 0, pulley1.radius*2+pulley3.radius*2);
-  drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI, -pulley2.radius*2, -pulley2.radius*2);
-  drawArc(pulley3.x, pulley3.y, pulley3.radius+10, PI, 0, pulley3.radius*2, pulley3.radius*2);
-  drawArc(pulley4.x, pulley4.y, pulley4.radius+10, 0, PI);
-  */
+  if (dimSwitch.checked) {
+    stroke(0);
+    fill(0);
+    textSize(14);
+    textAlign(LEFT, CENTER);
+    text("L1", pulley1.x+pulley1.radius-20, 10);
+    text("L2", pulley3.x+pulley3.radius-20, 740);
+    text("L3", pulley4.x+pulley4.radius-20, 740);
+    drawDimension(pulley2.y, pulley1.y, pulley1.x+pulley1.radius+30, "S", "a");
+    drawDimension(pulley2.y, pulley3.y, pulley2.x-pulley2.radius-30, "S", "b");
+    drawDimension(pulley2.y, pulley4.y, pulley3.x-pulley3.radius-30, "S", "c");
+    drawDimension(pulley2.y, weight.y-10, pulley4.x-pulley4.radius-30, "S", "d");
+    drawArc(pulley1.x, pulley1.y, pulley1.radius+10, 0, PI);
+    drawArc(pulley2.x, pulley2.y, pulley2.radius+10, PI, 0);
+    drawArc(pulley3.x, pulley3.y, pulley3.radius+10, PI, 0);
+    drawArc(pulley4.x, pulley4.y, pulley4.radius+10, PI, 0);
+    drawDimension(10, pulley2.y, pulley1.x+pulley1.radius+10, "", "", color(200, 0, 0), 0, 5);
+    drawDimension(pulley2.y, 740, 30, "h", "");
+  }
 
-  /*
   // drawing equations
-  textAlign(LEFT, CENTER);
-  textSize(14);
-  fill(120, 0, 120);
-  stroke(120, 0, 120);
-  text("L = Rope Length", 350, 300);
-  text("R = Red Dimensions", 350, 320);
-  text("L = R + Sa + 4*Sb", 350, 380);
-  text("0 = Va + 4*Vb", 350, 400);
-  text("0 = Aa + 4*Ab", 350, 420);
-  */
+  if (equSwitch.checked) {
+    textAlign(LEFT, CENTER);
+    textSize(14);
+    fill(120, 0, 120);
+    stroke(120, 0, 120);
+    text("L = Rope Length", 420, 300);
+    text("R = Red Dimensions", 420, 320);
+    text("L1 = R1 + 2*Sa + Sb", 420, 380);
+    text("L2 = R2 + (h - Sb) + (Sc - Sb)", 420, 400);
+    text("L3 = R3 + (h - Sc) + (Sd - Sc)", 420, 420);
+    text("0 = 2*Va + Vb", 420, 480);
+    text("0 = Vc - 2*Vb", 420, 500);
+    text("0 = Vd - 2*Vc", 420, 520);
+    text("0 = 2*Aa + Ab", 420, 580);
+    text("0 = Ac - 2*Ab", 420, 600);
+    text("0 = Ad - 2*Ac", 420, 620);
+  }
+
+  // drawing forces
+  if (forSwitch.checked) {
+    drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
+    drawArrow(weight.x+20, weight.y-10, weight.x+20, weight.y-80);
+  }
 }
 
 
@@ -429,6 +493,75 @@ function drawDimension(yStart, yEnd, x, name, subscript, colour = color(120, 0, 
 }
 
 /**
+ * This function draws a dimension.
+ * @param {number} yStart The position of the top of the dimension from the top of the canvas in pixels.
+ * @param {number} yEnd The position of the bottom of the dimension from the top of the canvas in pixels.
+ * @param {number} x The position of the dimension from the left side of the canvas in pixels.
+ * @param {string} name The name of the dimension.
+ * @param {string} subscript The subscript of the name of the dimension.
+ * @param {Color} colour The colour of the dimension.
+ * @param {number} midSpacing The length of the empty space in the middle of the dimension.
+ * @param {number} tailLength The length of the tails on the end of the dimension.
+ */
+ function drawUniversalDimension(xStart, yStart, xEnd, yEnd, name, subscript, colour = color(120, 0, 120), midSpacing = 15, tailLength = 5) {
+  strokeWeight(1);
+  stroke(colour);
+  fill(colour);
+
+  let dx = xStart - xEnd;
+  let dy = yStart - yEnd;
+  let angle;
+  if (dx == 0 && dy == 0) {
+    angle = 0;
+  } else if (dx == 0 && dy > 0) {
+    angle = PI/2;
+  } else if (dx == 0 && dy < 0) {
+    angle = 3*PI/2;
+  } else if (dx > 0 && dy == 0) {
+    angle = 0;
+  } else if (dx < 0 && dy == 0) {
+    angle = PI;
+  } else if (dx > 0 && dy > 0) {
+    angle = Math.atan(abs(dy/dx));
+  } else if (dx < 0 && dy > 0) {
+    angle = PI - Math.atan(abs(dy/dx));
+  } else if (dx > 0 && dy < 0) {
+    angle = 2*PI - Math.atan(abs(dy/dx));
+  } else if (dx < 0 && dy < 0) {
+    angle = PI + Math.atan(abs(dy/dx));
+  }
+  let length = Math.sqrt(dx*dx+dy*dy);
+  let halfLength = length/2 - midSpacing;
+  let xStartMid = xStart - halfLength*Math.cos(angle);
+  let yStartMid = yStart - halfLength*Math.sin(angle);
+  let xEndMid = xEnd + halfLength*Math.cos(angle);
+  let yEndMid = yEnd + halfLength*Math.sin(angle);
+  let xText = xEnd + (length/2)*Math.cos(angle);
+  let yText = yEnd + (length/2)*Math.sin(angle);
+
+  let xStartCorner1 = xStart - tailLength*Math.sin(angle);
+  let yStartCorner1 = yStart + tailLength*Math.cos(angle);
+  let xStartCorner2 = xStart + tailLength*Math.sin(angle);
+  let yStartCorner2 = yStart - tailLength*Math.cos(angle);
+
+  let xEndCorner1 = xEnd - tailLength*Math.sin(angle);
+  let yEndCorner1 = yEnd + tailLength*Math.cos(angle);
+  let xEndCorner2 = xEnd + tailLength*Math.sin(angle);
+  let yEndCorner2 = yEnd - tailLength*Math.cos(angle);
+
+  line(xStart, yStart, xStartMid, yStartMid);
+  line(xEndMid, yEndMid, xEnd, yEnd);
+  line(xStartCorner1, yStartCorner1, xStartCorner2, yStartCorner2);
+  line(xEndCorner1, yEndCorner1, xEndCorner2, yEndCorner2);
+
+  textAlign(LEFT, CENTER);
+  textSize(14);
+  text(name, xText-5, yText);
+  textSize(10)
+  text(subscript, xText+3, yText+3);
+}
+
+/**
  * This function draws an arc.
  * @param {number} x The position of the arc from the left side of the canvas in pixels.
  * @param {number} y The position of the arc from the top of the canvas in pixels.
@@ -450,6 +583,56 @@ function drawArc(x, y, size, start, end, left = 0, right = 0, colour = color(200
   line(x-size, y, x-size, y+left);
   line(x+size-tailLength, y+right, x+size+tailLength, y+right);
   line(x+size, y, x+size, y+right);
+}
+
+/**
+ * This function draws an arrow.
+ * @param {number} xStart The position of the tip of the arrow from the left side of the canvas in pixels.
+ * @param {number} yStart The position of the tip of the arrow from the top of the canvas in pixels.
+ * @param {number} xTail The position of the tail of the arrow from the left side of the canvas in pixels.
+ * @param {number} yTail The position of the tail of the arrow from the top of the canvas in pixels.
+ * @param {Color} colour The colour of the arrow.
+ */
+function drawArrow(xStart, yStart, xEnd, yEnd, colour = color(200, 0, 0)) {
+  strokeWeight(1);
+  stroke(colour);
+  fill(colour);
+
+  let dx = xStart - xEnd;
+  let dy = yStart - yEnd;
+  let angle;
+  if (dx == 0 && dy == 0) {
+    angle = 0;
+  } else if (dx == 0 && dy > 0) {
+    angle = PI/2;
+  } else if (dx == 0 && dy < 0) {
+    angle = 3*PI/2;
+  } else if (dx > 0 && dy == 0) {
+    angle = 0;
+  } else if (dx < 0 && dy == 0) {
+    angle = PI;
+  } else if (dx > 0 && dy > 0) {
+    angle = Math.atan(abs(dy/dx));
+  } else if (dx < 0 && dy > 0) {
+    angle = PI - Math.atan(abs(dy/dx));
+  } else if (dx > 0 && dy < 0) {
+    angle = 2*PI - Math.atan(abs(dy/dx));
+  } else if (dx < 0 && dy < 0) {
+    angle = PI + Math.atan(abs(dy/dx));
+  }
+  let length = Math.sqrt(dx*dx+dy*dy);
+  let arrowHeight = length*0.8;
+  let arrowWidth = length*0.1;
+  let dxArrowHeight = arrowHeight*Math.cos(angle);
+  let dyArrowHeight = arrowHeight*Math.sin(angle);
+
+  let xCorner1 = xEnd + dxArrowHeight - arrowWidth*Math.sin(angle);
+  let yCorner1 = yEnd + dyArrowHeight + arrowWidth*Math.cos(angle);
+  let xCorner2 = xEnd + dxArrowHeight + arrowWidth*Math.sin(angle);
+  let yCorner2 = yEnd + dyArrowHeight - arrowWidth*Math.cos(angle);
+
+  triangle(xStart, yStart, xCorner1, yCorner1, xCorner2, yCorner2);
+  line(xStart, yStart, xEnd, yEnd);
 }
 
 
@@ -541,6 +724,16 @@ class PulleyRope {
     this.startY;
     this.defaultLength;
 
+    this.arrowStartX;
+    this.arrowStartY;
+    this.arrowEndX;
+    this.arrowEndY;
+
+    this.dimensionStartX;
+    this.dimensionStartY;
+    this.dimensionEndX;
+    this.dimensionEndY;
+
     if (linear) {
       this.linearUpdate(pulleyX, 0);
     } else {
@@ -568,7 +761,6 @@ class PulleyRope {
 
     this.endX = constrain(x, this.pulleyX + this.pulleyRadius, width);
     this.endY = constrain(y, this.pulleyY - this.pulleyRadius, height);
-
     let innerAngle = Math.acos(this.pulleyRadius/Math.sqrt((this.endX-this.pulleyX)*(this.endX-this.pulleyX)+(this.endY-this.pulleyY)*(this.endY-this.pulleyY)));
     let lowerAngle;
     if (this.endY > this.pulleyY) {
@@ -577,19 +769,19 @@ class PulleyRope {
       lowerAngle = Math.PI - Math.atan((this.endX-this.pulleyX)/(this.pulleyY - this.endY));
     }
     let upperAngle = Math.PI - innerAngle - lowerAngle;
-
     this.startX = this.pulleyX + Math.abs(this.pulleyRadius*Math.sin(upperAngle));
     this.startY = this.pulleyY - Math.abs(this.pulleyRadius*Math.cos(upperAngle));
-
     let exitRopeLength = Math.sqrt((this.endX-this.startX)*(this.endX-this.startX)+(this.endY-this.startY)*(this.endY-this.startY));
     this.ropeLength = constrain(this.pulleyRadius*upperAngle + exitRopeLength, this.minRopeLength, this.maxRopeLength);
     this.defaultLength = this.ropeLength - this.minRopeLength;
-
     this.endX = this.startX + (this.ropeLength - this.pulleyRadius*upperAngle)*cos(upperAngle);
     this.endY = this.startY + (this.ropeLength - this.pulleyRadius*upperAngle)*sin(upperAngle);
 
     this.ropeVel = this.ropeLength - lenOld;
     this.ropeAcc = this.ropeVel - velOld;
+
+    this.arrowPositionUpdate(upperAngle, 70, -15);
+    this.dimensionPositionUpdate(upperAngle, this.defaultLength+50, 30);
   }
 
   linearUpdate(x, y) {
@@ -607,6 +799,22 @@ class PulleyRope {
 
     this.ropeVel = this.ropeLength - lenOld;
     this.ropeAcc = this.ropeVel - velOld;
+
+    this.arrowPositionUpdate(PI/2, 70, -15);
+  }
+
+  arrowPositionUpdate(angle, arrowLength, arrowSpacing) {
+    this.arrowStartX = this.endX + arrowSpacing*Math.sin(angle);
+    this.arrowStartY = this.endY - arrowSpacing*Math.cos(angle);
+    this.arrowEndX = this.endX - arrowLength*Math.cos(angle) + arrowSpacing*Math.sin(angle);
+    this.arrowEndY = this.endY - arrowLength*Math.sin(angle) - arrowSpacing*Math.cos(angle);
+  }
+
+  dimensionPositionUpdate(angle, dimensionLength, dimensionSpacing) {
+    this.dimensionStartX = this.endX + dimensionSpacing*Math.sin(angle);
+    this.dimensionStartY = this.endY - dimensionSpacing*Math.cos(angle) - 5;
+    this.dimensionEndX = this.endX - dimensionLength*Math.cos(angle) + dimensionSpacing*Math.sin(angle);
+    this.dimensionEndY = this.endY - dimensionLength*Math.sin(angle) - dimensionSpacing*Math.cos(angle) - 5;
   }
 
   grabAreaHover(x, y) {

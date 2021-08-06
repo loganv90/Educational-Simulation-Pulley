@@ -71,10 +71,12 @@
 
           <div id="level2-stack">
             <div id="input-container">
-              <p><b>INPUT:</b></p><br></br>
+              <p><b>INPUT:</b></p>
+              
+              <br></br>
 
               <label class="input-label" for="num-select">Number of Pulleys:</label><br>
-              <select id="num-select">
+              <select class="input-select" id="num-select">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -82,15 +84,12 @@
                 <option value="4.2">4.2</option>
               </select>
 
-              <br><br></br>
+              <br></br>
 
-              <label class="input-label" for="input-F">1: </label><br>
-              <input class="input-box" type="text" value="1" id="input-F">
-              <input class="input-slider" type="range" min="-100" max="100" value="50" id="slider-F"><br></br>
-
-              <label class="input-label" for="input-W">2: </label><br>
-              <input class="input-box" type="text" value="2" id="input-W">
-              <input class="input-slider" type="range" min="-100" max="100" value="50" id="slider-W"><br></br>
+              <label class="input-label" for="num-select">Drawing Switches:</label><br>
+              <input type="checkbox" checked="checked" id="Dim-Switch">Dimensions</button><br>
+              <input type="checkbox" checked="checked" id="Equ-Switch">Equations</button><br>
+              <input type="checkbox" checked="checked" id="For-Switch">Forces</button>
             </div>
 
             <div id="p5-graph-container"></div>
