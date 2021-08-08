@@ -112,6 +112,17 @@ function drawP1() {
   if (forSwitch.checked) {
     drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
     drawArrow(weight.x+20, weight.y-10, weight.x+20, weight.y-80);
+
+    let force;
+    if (weight.y < 650) {
+      force =  massValue*9.81;
+    } else {
+      force =  0;
+    }
+    textSize(14);
+    textAlign(LEFT, CENTER);
+    text(Math.round(force*100)/100 + " N", pulleyRope.arrowStartX+10, pulleyRope.arrowStartY-10);
+    text(Math.round(force*100)/100 + " N", weight.x+20+10, weight.y-10-10);
   }
 }
 
@@ -193,6 +204,18 @@ function drawP2() {
   if (forSwitch.checked) {
     drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
     drawArrow(weight.x-70, weight.y+80, weight.x-70, weight.y+10);
+
+    let force;
+    if (weight.y < 650) {
+      force =  massValue*9.81;
+    } else {
+      force =  0;
+    }
+    textSize(14);
+    textAlign(LEFT, CENTER);
+    text(Math.round(force*100/2)/100 + " N", pulleyRope.arrowStartX+10, pulleyRope.arrowStartY-10);
+    textAlign(RIGHT, CENTER);
+    text(Math.round(force*100)/100 + " N", weight.x-70-10, weight.y+80-10);
   }
 }
 
@@ -279,6 +302,18 @@ function drawP3() {
   if (forSwitch.checked) {
     drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
     drawArrow(weight.x-70, weight.y+80, weight.x-70, weight.y+10);
+
+    let force;
+    if (weight.y < 650) {
+      force =  massValue*9.81;
+    } else {
+      force =  0;
+    }
+    textSize(14);
+    textAlign(LEFT, CENTER);
+    text(Math.round(force*100/3)/100 + " N", pulleyRope.arrowStartX+10, pulleyRope.arrowStartY-10);
+    textAlign(RIGHT, CENTER);
+    text(Math.round(force*100)/100 + " N", weight.x-70-10, weight.y+80-10);
   }
 }
 
@@ -370,6 +405,18 @@ function drawP4() {
   if (forSwitch.checked) {
     drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
     drawArrow(weight.x-70, weight.y+80, weight.x-70, weight.y+10);
+
+    let force;
+    if (weight.y < 650) {
+      force =  massValue*9.81;
+    } else {
+      force =  0;
+    }
+    textSize(14);
+    textAlign(LEFT, CENTER);
+    text(Math.round(force*100/4)/100 + " N", pulleyRope.arrowStartX+10, pulleyRope.arrowStartY-10);
+    textAlign(RIGHT, CENTER);
+    text(Math.round(force*100)/100 + " N", weight.x-70-10, weight.y+80-10);
   }
 }
 
@@ -525,6 +572,17 @@ function drawP4() {
   if (forSwitch.checked) {
     drawArrow(pulleyRope.arrowStartX, pulleyRope.arrowStartY, pulleyRope.arrowEndX, pulleyRope.arrowEndY);
     drawArrow(weight.x+20, weight.y-10, weight.x+20, weight.y-80);
+
+    let force;
+    if (weight.y < 650) {
+      force =  massValue*9.81;
+    } else {
+      force =  0;
+    }
+    textSize(14);
+    textAlign(LEFT, CENTER);
+    text(Math.round(force*100*8)/100 + " N", pulleyRope.arrowStartX+10, pulleyRope.arrowStartY-10);
+    text(Math.round(force*100)/100 + " N", weight.x+20+10, weight.y-10-10);
   }
 }
 
@@ -843,11 +901,13 @@ class Weight {
     circle(this.x, this.y, 10);
     rect(this.x-this.size, this.y, this.x+this.size, this.y+this.size*2);
 
-    fill(255);
-    textSize(14);
-    textStyle(NORMAL);
-    textAlign(CENTER, CENTER);
-    text(massValue + " kg", this.x, this.y+this.size);
+    if (forSwitch.checked) {
+      fill(255);
+      textSize(14);
+      textStyle(NORMAL);
+      textAlign(CENTER, CENTER);
+      text(massValue + " kg", this.x, this.y+this.size);
+    }
   }
 
 

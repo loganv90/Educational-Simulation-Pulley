@@ -103,5 +103,5 @@ window.onload = () => {
   } else if (input < min) {
     return min;
   }
-  return Math.round(input*1000)/1000;
+  return Math.round(input*100)/100;
 }
