@@ -75,7 +75,7 @@
               
               <br></br>
 
-              <label class="input-label" for="num-select">Number of Pulleys:</label><br>
+              <label class="input-label">Number of Pulleys:</label><br>
               <select class="input-select" id="num-select">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -86,10 +86,16 @@
 
               <br></br>
 
-              <label class="input-label" for="num-select">Drawing Switches:</label><br>
+              <label class="input-label">Drawing Switches:</label><br>
               <input type="checkbox" checked="checked" id="Dim-Switch">Dimensions</button><br>
               <input type="checkbox" checked="checked" id="Equ-Switch">Equations</button><br>
               <input type="checkbox" checked="checked" id="For-Switch">Forces</button>
+
+              <br></br>
+
+              <label class="input-label">Mass (kg):</label><br>
+              <input class="input-box" type="text" value="50" id="input-mass">
+              <input class="input-slider" type="range" min="0" max="100" value="50" id="slider-mass">
             </div>
 
             <div id="p5-graph-container"></div>

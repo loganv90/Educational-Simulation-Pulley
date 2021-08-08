@@ -826,15 +826,12 @@ function findAngle(dx, dy) {
 
 
 class Weight {
-  constructor(startX, startY, size, mass) {
+  constructor(startX, startY, size) {
     this.startX = startX;
     this.startY = startY;
-
     this.x = startX;
     this.y = startY;
-
     this.size = size;
-    this.mass = mass;
 
     this.yVel = 0;
     this.yAcc = 0;
@@ -845,7 +842,14 @@ class Weight {
     fill(0);
     circle(this.x, this.y, 10);
     rect(this.x-this.size, this.y, this.x+this.size, this.y+this.size*2);
+
+    fill(255);
+    textSize(14);
+    textStyle(NORMAL);
+    textAlign(CENTER, CENTER);
+    text(massValue + " kg", this.x, this.y+this.size);
   }
+
 
   update(pulledLength, movementMultiplier) {
     let yOld = this.y;
@@ -858,7 +862,7 @@ class Weight {
 }
 
 class Pulley {
-  constructor(startX, startY, radius, free) {
+  constructor(startX, startY, radius) {
     this.startX = startX;
     this.startY = startY;
 
