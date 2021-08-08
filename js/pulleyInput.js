@@ -21,13 +21,10 @@ window.onload = () => {
   massMax = 100;
   massMin = 0;
 
-  plot1 = new Plot(10, 100, 182, 50, color(0, 0, 200));
-  plot2 = new Plot(10, 200, 182, 150, color(0, 200, 0));
-  plot3 = new Plot(10, 300, 182, 250, color(200, 0, 0));
-
-  plot4 = new Plot(202, 100, 374, 50, color(0, 0, 200));
-  plot5 = new Plot(202, 200, 374, 150, color(0, 200, 0));
-  plot6 = new Plot(202, 300, 374, 250, color(200, 0, 0));
+  plot1 = new Plot(20, 100, 374, 50, color(20, 20, 160));
+  plot2 = new Plot(20, 227, 374, 177, color(20, 160, 20));
+  plot3 = new Plot(20, 353, 374, 303, color(160, 20, 20));
+  plot4 = new Plot(20, 480, 374, 430, color(90, 20, 160));
 
   // the functionality of the drop down menus
   numSelect.onchange = () => {

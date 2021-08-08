@@ -688,7 +688,7 @@ function drawDimension(yStart, yEnd, x, name, subscript, colour = color(120, 0, 
  * @param {number} midSpacing The length of the empty space in the middle of the dimension.
  * @param {number} tailLength The length of the tails on the end of the dimension.
  */
- function drawUniversalDimension(xStart, yStart, xEnd, yEnd, name, subscript, colour = color(120, 0, 120), midSpacing = 15, tailLength = 5) {
+function drawUniversalDimension(xStart, yStart, xEnd, yEnd, name, subscript, colour = color(120, 0, 120), midSpacing = 15, tailLength = 5) {
   strokeWeight(1);
   stroke(colour);
   fill(colour);
@@ -765,7 +765,7 @@ function drawArc(x, y, radius, angleStart, angleEnd, left = 0, right = 0, colour
  * @param {Color} colour The colour of the arc.
  * @param {number} tailLength The length of the tails on the end of the arc.
  */
- function drawUniversalArc(x, y, radiusArc, angleStartArc, angleEndArc, startExt = 0, endExt = 0, colour = color(200, 0, 0), tailLength = 5) {
+function drawUniversalArc(x, y, radiusArc, angleStartArc, angleEndArc, startExt = 0, endExt = 0, colour = color(200, 0, 0), tailLength = 5) {
   strokeWeight(1);
   stroke(colour);
   noFill();
@@ -872,7 +872,7 @@ function findAngle(dx, dy) {
  * @param {string} stlye The style of the text.
  * @returns {number} The position at the end of the drawn text.
  */
- function textLine(content, xPosition, yPosition, size, style) {
+function textLine(content, xPosition, yPosition, size, style) {
   textStyle(style);
   textSize(size);
   text(content, xPosition, yPosition);
@@ -890,9 +890,6 @@ class Weight {
     this.x = startX;
     this.y = startY;
     this.size = size;
-
-    this.yVel = 0;
-    this.yAcc = 0;
   }
 
   show() {
@@ -910,14 +907,8 @@ class Weight {
     }
   }
 
-
   update(pulledLength, movementMultiplier) {
-    let yOld = this.y;
-    let yVelOld = this.yVel;
-
     this.y = this.startY - pulledLength*movementMultiplier;
-    this.yVel = this.y - yOld;
-    this.yAcc = this.yVel - yVelOld;
   }
 }
 
@@ -964,6 +955,7 @@ class PulleyRope {
     this.minRopeLength = minRopeLength;
     this.maxRopeLength = maxRopeLength;
 
+    this.ropeLength = minRopeLength;
     this.arcLength = 0;
     this.dragging = false;
     this.dragPoint = 0;
@@ -990,10 +982,6 @@ class PulleyRope {
     } else {
       this.update(0, 0);
     }
-
-    this.ropeLength = minRopeLength;
-    this.ropeVel = 0;
-    this.ropeAcc = 0;
   }
 
   show() {
@@ -1007,11 +995,9 @@ class PulleyRope {
   }
 
   update(x, y) {
-    let lenOld = this.ropeLength;
-    let velOld = this.ropeVel;
-
     this.endX = constrain(x, this.pulleyX + this.pulleyRadius, width);
     this.endY = constrain(y, this.pulleyY - this.pulleyRadius, height);
+
     let innerAngle = Math.acos(this.pulleyRadius/Math.sqrt((this.endX-this.pulleyX)*(this.endX-this.pulleyX)+(this.endY-this.pulleyY)*(this.endY-this.pulleyY)));
     let lowerAngle;
     if (this.endY > this.pulleyY) {
@@ -1020,26 +1006,23 @@ class PulleyRope {
       lowerAngle = Math.PI - Math.atan((this.endX-this.pulleyX)/(this.pulleyY - this.endY));
     }
     let upperAngle = Math.PI - innerAngle - lowerAngle;
+
     this.startX = this.pulleyX + Math.abs(this.pulleyRadius*Math.sin(upperAngle));
     this.startY = this.pulleyY - Math.abs(this.pulleyRadius*Math.cos(upperAngle));
+
     let exitRopeLength = Math.sqrt((this.endX-this.startX)*(this.endX-this.startX)+(this.endY-this.startY)*(this.endY-this.startY));
     this.ropeLength = constrain(this.pulleyRadius*upperAngle + exitRopeLength, this.minRopeLength, this.maxRopeLength);
     this.defaultLength = this.ropeLength - this.minRopeLength;
-    this.endX = this.startX + (this.ropeLength - this.pulleyRadius*upperAngle)*cos(upperAngle);
-    this.endY = this.startY + (this.ropeLength - this.pulleyRadius*upperAngle)*sin(upperAngle);
     this.arcLength = upperAngle*this.pulleyRadius;
 
-    this.ropeVel = this.ropeLength - lenOld;
-    this.ropeAcc = this.ropeVel - velOld;
+    this.endX = this.startX + (this.ropeLength - this.pulleyRadius*upperAngle)*cos(upperAngle);
+    this.endY = this.startY + (this.ropeLength - this.pulleyRadius*upperAngle)*sin(upperAngle);
 
     this.arrowPositionUpdate(upperAngle, 70, 15, 40);
     this.dimensionPositionUpdate(upperAngle, this.defaultLength+55, 30);
   }
 
   linearUpdate(x, y) {
-    let lenOld = this.ropeLength;
-    let velOld = this.ropeVel;
-
     this.endX = x;
     this.endY = constrain(y, this.pulleyY+this.minRopeLength, this.pulleyY+this.maxRopeLength);
 
@@ -1048,9 +1031,6 @@ class PulleyRope {
 
     this.ropeLength = constrain(this.endY - this.startY, this.minRopeLength, this.maxRopeLength);
     this.defaultLength = this.ropeLength - this.minRopeLength;
-
-    this.ropeVel = this.ropeLength - lenOld;
-    this.ropeAcc = this.ropeVel - velOld;
 
     this.arrowPositionUpdate(PI/2, 70, 15, 40);
   }
