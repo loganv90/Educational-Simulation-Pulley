@@ -81,11 +81,8 @@ function drawP1() {
   // drawing equations
   if (equSwitch.checked) {
     textAlign(LEFT, CENTER);
-    textSize(14);
     fill(120, 0, 120);
     stroke(120, 0, 120);
-    text("L = Rope Length", 420, 300);
-    text("R = Red Dimensions", 420, 320);
 
     let textPosition;
     let posHeight = 380;
@@ -173,11 +170,8 @@ function drawP2() {
   // drawing equations
   if (equSwitch.checked) {
     textAlign(LEFT, CENTER);
-    textSize(14);
     fill(120, 0, 120);
     stroke(120, 0, 120);
-    text("L = Rope Length", 420, 300);
-    text("R = Red Dimensions", 420, 320);
 
     let textPosition;
     let posHeight = 380;
@@ -271,11 +265,8 @@ function drawP3() {
   // drawing equations
   if (equSwitch.checked) {
     textAlign(LEFT, CENTER);
-    textSize(14);
     fill(120, 0, 120);
     stroke(120, 0, 120);
-    text("L = Rope Length", 420, 300);
-    text("R = Red Dimensions", 420, 320);
 
     let textPosition;
     let posHeight = 380;
@@ -374,11 +365,8 @@ function drawP4() {
   // drawing equations
   if (equSwitch.checked) {
     textAlign(LEFT, CENTER);
-    textSize(14);
     fill(120, 0, 120);
     stroke(120, 0, 120);
-    text("L = Rope Length", 420, 300);
-    text("R = Red Dimensions", 420, 320);
 
     let textPosition;
     let posHeight = 380;
@@ -499,11 +487,8 @@ function drawP4() {
   // drawing equations
   if (equSwitch.checked) {
     textAlign(LEFT, CENTER);
-    textSize(14);
     fill(120, 0, 120);
     stroke(120, 0, 120);
-    text("L = Rope Length", 420, 300);
-    text("R = Red Dimensions", 420, 320);
 
     let textPosition;
     let posHeight = 380;
@@ -530,15 +515,15 @@ function drawP4() {
     textPosition = textLine("b", textPosition, posHeight+23, 10, NORMAL);
     textLine(")", textPosition, posHeight+20, 14, NORMAL);
     textPosition = textLine("L", 420, posHeight+40, 14, NORMAL);
-    textPosition = textLine("2", textPosition, posHeight+43, 10, NORMAL);
+    textPosition = textLine("3", textPosition, posHeight+43, 10, NORMAL);
     textPosition = textLine(" = R", textPosition, posHeight+40, 14, NORMAL);
-    textPosition = textLine("2", textPosition, posHeight+43, 10, NORMAL);
+    textPosition = textLine("3", textPosition, posHeight+43, 10, NORMAL);
     textPosition = textLine(" + (h - S", textPosition, posHeight+40, 14, NORMAL);
-    textPosition = textLine("b", textPosition, posHeight+43, 10, NORMAL);
-    textPosition = textLine(") + (S", textPosition, posHeight+40, 14, NORMAL);
     textPosition = textLine("c", textPosition, posHeight+43, 10, NORMAL);
+    textPosition = textLine(") + (S", textPosition, posHeight+40, 14, NORMAL);
+    textPosition = textLine("d", textPosition, posHeight+43, 10, NORMAL);
     textPosition = textLine(" - S", textPosition, posHeight+40, 14, NORMAL);
-    textPosition = textLine("b", textPosition, posHeight+43, 10, NORMAL);
+    textPosition = textLine("c", textPosition, posHeight+43, 10, NORMAL);
     textLine(")", textPosition, posHeight+40, 14, NORMAL);
 
     textPosition = textLine("0 = 2V", 420, velHeight, 14, NORMAL);
@@ -551,7 +536,7 @@ function drawP4() {
     textLine("b", textPosition, velHeight+23, 10, NORMAL);
     textPosition = textLine("0 = V", 420, velHeight+40, 14, NORMAL);
     textPosition = textLine("d", textPosition, velHeight+43, 10, NORMAL);
-    textPosition = textLine(" + 2V", textPosition, velHeight+40, 14, NORMAL);
+    textPosition = textLine(" - 2V", textPosition, velHeight+40, 14, NORMAL);
     textLine("c", textPosition, velHeight+43, 10, NORMAL);
 
     textPosition = textLine("0 = 2A", 420, accHeight, 14, NORMAL);
@@ -564,7 +549,7 @@ function drawP4() {
     textLine("b", textPosition, accHeight+23, 10, NORMAL);
     textPosition = textLine("0 = A", 420, accHeight+40, 14, NORMAL);
     textPosition = textLine("d", textPosition, accHeight+43, 10, NORMAL);
-    textPosition = textLine(" + 2A", textPosition, accHeight+40, 14, NORMAL);
+    textPosition = textLine(" - 2A", textPosition, accHeight+40, 14, NORMAL);
     textLine("c", textPosition, accHeight+43, 10, NORMAL);
   }
 
