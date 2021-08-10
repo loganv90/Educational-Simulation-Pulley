@@ -43,18 +43,18 @@ const s = ( pulleyGraph ) => {
         graph.textAlign(LEFT, CENTER);
         graph.fill(0);
         graph.stroke(0);
-        textPosition = graphTextLine("S", 140, plot1.yEnd-15, 14, NORMAL);
-        textPosition = graphTextLine("a", textPosition, plot1.yEnd-12, 10, NORMAL);
-        graphTextLine(" Displacement", textPosition, plot1.yEnd-15, 14, NORMAL);
-        textPosition = graphTextLine("S", 140, plot2.yEnd-15, 14, NORMAL);
-        textPosition = graphTextLine("b", textPosition, plot2.yEnd-12, 10, NORMAL);
-        graphTextLine(" Displacement", textPosition, plot2.yEnd-15, 14, NORMAL);
-        textPosition = graphTextLine("S", 140, plot3.yEnd-15, 14, NORMAL);
-        textPosition = graphTextLine("c", textPosition, plot3.yEnd-12, 10, NORMAL);
-        graphTextLine(" Displacement", textPosition, plot3.yEnd-15, 14, NORMAL);
-        textPosition = graphTextLine("S", 140, plot4.yEnd-15, 14, NORMAL);
-        textPosition = graphTextLine("d", textPosition, plot4.yEnd-12, 10, NORMAL);
-        graphTextLine(" Displacement", textPosition, plot4.yEnd-15, 14, NORMAL);
+        textPosition = graphTextLine("s", 140, plot1.yEnd-15, 17, NORMAL);
+        textPosition = graphTextLine("a", textPosition, plot1.yEnd-11, 12, NORMAL);
+        graphTextLine("  Displacement", textPosition, plot1.yEnd-15, 14, NORMAL);
+        textPosition = graphTextLine("s", 140, plot2.yEnd-15, 17, NORMAL);
+        textPosition = graphTextLine("b", textPosition, plot2.yEnd-11, 12, NORMAL);
+        graphTextLine("  Displacement", textPosition, plot2.yEnd-15, 14, NORMAL);
+        textPosition = graphTextLine("s", 140, plot3.yEnd-15, 17, NORMAL);
+        textPosition = graphTextLine("c", textPosition, plot3.yEnd-11, 12, NORMAL);
+        graphTextLine("  Displacement", textPosition, plot3.yEnd-15, 14, NORMAL);
+        textPosition = graphTextLine("s", 140, plot4.yEnd-15, 17, NORMAL);
+        textPosition = graphTextLine("d", textPosition, plot4.yEnd-11, 12, NORMAL);
+        graphTextLine("  Displacement", textPosition, plot4.yEnd-15, 14, NORMAL);
     };
 }
 

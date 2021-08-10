@@ -73,8 +73,8 @@ function drawP1() {
 
   // drawing dimensions
   if (dimSwitch.checked) {
-    drawDimension(pulley1.y, weight.y-10, pulley1.x-pulley1.radius-30, "S", "b");
-    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "S", "a");
+    drawDimension(pulley1.y, weight.y-10, pulley1.x-pulley1.radius-30, "s", "b");
+    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "s", "a");
     drawUniversalArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, findAngle(pulleyRope.startX-pulleyRope.pulleyX, pulleyRope.startY-pulleyRope.pulleyY), 0, pulleyRope.arcLength-95);
   }
 
@@ -86,22 +86,25 @@ function drawP1() {
 
     let textPosition;
     let posHeight = 380;
-    let velHeight = 420;
-    let accHeight = 460;
+    let velHeight = 440;
+    let accHeight = 500;
 
-    textPosition = textLine("L = R + S", 420, posHeight, 14, NORMAL);
+    textLine("Position:", 400, posHeight-20, 14, NORMAL);
+    textPosition = textLine("L = R + s", 420, posHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, posHeight+3, 10, NORMAL);
-    textPosition = textLine(" + S", textPosition, posHeight, 14, NORMAL);
+    textPosition = textLine(" + s", textPosition, posHeight, 14, NORMAL);
     textLine("b", textPosition, posHeight+3, 10, NORMAL);
 
-    textPosition = textLine("0 = V", 420, velHeight, 14, NORMAL);
+    textLine("Velocity:", 400, velHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = v", 420, velHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, velHeight+3, 10, NORMAL);
-    textPosition = textLine(" + V", textPosition, velHeight, 14, NORMAL);
+    textPosition = textLine(" + v", textPosition, velHeight, 14, NORMAL);
     textLine("b", textPosition, velHeight+3, 10, NORMAL);
     
-    textPosition = textLine("0 = A", 420, accHeight, 14, NORMAL);
+    textLine("Acceleration:", 400, accHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = a", 420, accHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, accHeight+3, 10, NORMAL);
-    textPosition = textLine(" + A", textPosition, accHeight, 14, NORMAL);
+    textPosition = textLine(" + a", textPosition, accHeight, 14, NORMAL);
     textLine("b", textPosition, accHeight+3, 10, NORMAL);
   }
 
@@ -161,8 +164,8 @@ function drawP2() {
 
   // drawing dimensions
   if (dimSwitch.checked) {
-    drawDimension(pulley1.y+pulley1.radius*2, pulley2.y, pulley1.x-pulley1.radius-30, "S", "b");
-    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "S", "a");
+    drawDimension(pulley1.y+pulley1.radius*2, pulley2.y, pulley1.x-pulley1.radius-30, "s", "b");
+    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "s", "a");
     drawUniversalArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, findAngle(pulleyRope.startX-pulleyRope.pulleyX, pulleyRope.startY-pulleyRope.pulleyY), pulley1.radius*2, pulleyRope.arcLength-95);
     drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI);
   }
@@ -175,22 +178,25 @@ function drawP2() {
 
     let textPosition;
     let posHeight = 380;
-    let velHeight = 420;
-    let accHeight = 460;
+    let velHeight = 440;
+    let accHeight = 500;
 
-    textPosition = textLine("L = R + S", 420, posHeight, 14, NORMAL);
+    textLine("Position:", 400, posHeight-20, 14, NORMAL);
+    textPosition = textLine("L = R + s", 420, posHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, posHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 2S", textPosition, posHeight, 14, NORMAL);
+    textPosition = textLine(" + 2s", textPosition, posHeight, 14, NORMAL);
     textLine("b", textPosition, posHeight+3, 10, NORMAL);
 
-    textPosition = textLine("0 = V", 420, velHeight, 14, NORMAL);
+    textLine("Velocity:", 400, velHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = v", 420, velHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, velHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 2V", textPosition, velHeight, 14, NORMAL);
+    textPosition = textLine(" + 2v", textPosition, velHeight, 14, NORMAL);
     textLine("b", textPosition, velHeight+3, 10, NORMAL);
     
-    textPosition = textLine("0 = A", 420, accHeight, 14, NORMAL);
+    textLine("Acceleration:", 400, accHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = a", 420, accHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, accHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 2A", textPosition, accHeight, 14, NORMAL);
+    textPosition = textLine(" + 2a", textPosition, accHeight, 14, NORMAL);
     textLine("b", textPosition, accHeight+3, 10, NORMAL);
   }
 
@@ -255,8 +261,8 @@ function drawP3() {
 
   // drawing dimensions
   if (dimSwitch.checked) {
-    drawDimension(pulley3.y, pulley2.y-pulley2.radius*2, pulley1.x-pulley1.radius-30, "S", "b");
-    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "S", "a");
+    drawDimension(pulley3.y, pulley2.y-pulley2.radius*2, pulley1.x-pulley1.radius-30, "s", "b");
+    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "s", "a");
     drawUniversalArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, findAngle(pulleyRope.startX-pulleyRope.pulleyX, pulleyRope.startY-pulleyRope.pulleyY), pulley1.radius*2, pulleyRope.arcLength-95);
     drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI, -pulley2.radius*2, -pulley2.radius*2);
     drawArc(pulley3.x, pulley3.y, pulley3.radius+10, PI, 0);
@@ -270,22 +276,25 @@ function drawP3() {
 
     let textPosition;
     let posHeight = 380;
-    let velHeight = 420;
-    let accHeight = 460;
+    let velHeight = 440;
+    let accHeight = 500;
 
-    textPosition = textLine("L = R + S", 420, posHeight, 14, NORMAL);
+    textLine("Position:", 400, posHeight-20, 14, NORMAL);
+    textPosition = textLine("L = R + s", 420, posHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, posHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 3S", textPosition, posHeight, 14, NORMAL);
+    textPosition = textLine(" + 3s", textPosition, posHeight, 14, NORMAL);
     textLine("b", textPosition, posHeight+3, 10, NORMAL);
 
-    textPosition = textLine("0 = V", 420, velHeight, 14, NORMAL);
+    textLine("Velocity:", 400, velHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = v", 420, velHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, velHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 3V", textPosition, velHeight, 14, NORMAL);
+    textPosition = textLine(" + 3v", textPosition, velHeight, 14, NORMAL);
     textLine("b", textPosition, velHeight+3, 10, NORMAL);
     
-    textPosition = textLine("0 = A", 420, accHeight, 14, NORMAL);
+    textLine("Acceleration:", 400, accHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = a", 420, accHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, accHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 3A", textPosition, accHeight, 14, NORMAL);
+    textPosition = textLine(" + 3a", textPosition, accHeight, 14, NORMAL);
     textLine("b", textPosition, accHeight+3, 10, NORMAL);
   }
 
@@ -354,8 +363,8 @@ function drawP4() {
 
   // drawing dimensions
   if (dimSwitch.checked) {
-    drawDimension(pulley3.y+pulley3.radius*2, pulley2.y-pulley2.radius*2, pulley1.x-pulley1.radius-30, "S", "b");
-    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "S", "a");
+    drawDimension(pulley3.y+pulley3.radius*2, pulley2.y-pulley2.radius*2, pulley1.x-pulley1.radius-30, "s", "b");
+    drawUniversalDimension(pulleyRope.dimensionStartX, pulleyRope.dimensionStartY, pulleyRope.dimensionEndX, pulleyRope.dimensionEndY, "s", "a");
     drawUniversalArc(pulley1.x, pulley1.y, pulley1.radius+10, PI, findAngle(pulleyRope.startX-pulleyRope.pulleyX, pulleyRope.startY-pulleyRope.pulleyY), pulley1.radius*2+pulley3.radius*2, pulleyRope.arcLength-95);
     drawArc(pulley2.x, pulley2.y, pulley2.radius+10, 0, PI, -pulley2.radius*2, -pulley2.radius*2);
     drawArc(pulley3.x, pulley3.y, pulley3.radius+10, PI, 0, pulley3.radius*2, pulley3.radius*2);
@@ -370,22 +379,25 @@ function drawP4() {
 
     let textPosition;
     let posHeight = 380;
-    let velHeight = 420;
-    let accHeight = 460;
+    let velHeight = 440;
+    let accHeight = 500;
 
-    textPosition = textLine("L = R + S", 420, posHeight, 14, NORMAL);
+    textLine("Position:", 400, posHeight-20, 14, NORMAL);
+    textPosition = textLine("L = R + s", 420, posHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, posHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 4S", textPosition, posHeight, 14, NORMAL);
+    textPosition = textLine(" + 4s", textPosition, posHeight, 14, NORMAL);
     textLine("b", textPosition, posHeight+3, 10, NORMAL);
 
-    textPosition = textLine("0 = V", 420, velHeight, 14, NORMAL);
+    textLine("Velocity:", 400, velHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = v", 420, velHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, velHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 4V", textPosition, velHeight, 14, NORMAL);
+    textPosition = textLine(" + 4v", textPosition, velHeight, 14, NORMAL);
     textLine("b", textPosition, velHeight+3, 10, NORMAL);
     
-    textPosition = textLine("0 = A", 420, accHeight, 14, NORMAL);
+    textLine("Acceleration:", 400, accHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = a", 420, accHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, accHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 4A", textPosition, accHeight, 14, NORMAL);
+    textPosition = textLine(" + 4a", textPosition, accHeight, 14, NORMAL);
     textLine("b", textPosition, accHeight+3, 10, NORMAL);
   }
 
@@ -472,10 +484,10 @@ function drawP4() {
     text("1", pulley1.x+pulley1.radius-20+10, 10+3);
     text("2", pulley3.x+pulley3.radius-20+10, 740+3);
     text("3", pulley4.x+pulley4.radius-20+10, 740+3);
-    drawDimension(pulley2.y, pulley1.y, pulley1.x+pulley1.radius+30, "S", "a");
-    drawDimension(pulley2.y, pulley3.y, pulley2.x-pulley2.radius-30, "S", "b");
-    drawDimension(pulley2.y, pulley4.y, pulley3.x-pulley3.radius-30, "S", "c");
-    drawDimension(pulley2.y, weight.y-10, pulley4.x-pulley4.radius-30, "S", "d");
+    drawDimension(pulley2.y, pulley1.y, pulley1.x+pulley1.radius+30, "s", "a");
+    drawDimension(pulley2.y, pulley3.y, pulley2.x-pulley2.radius-30, "s", "b");
+    drawDimension(pulley2.y, pulley4.y, pulley3.x-pulley3.radius-30, "s", "c");
+    drawDimension(pulley2.y, weight.y-10, pulley4.x-pulley4.radius-30, "s", "d");
     drawArc(pulley1.x, pulley1.y, pulley1.radius+10, 0, PI);
     drawArc(pulley2.x, pulley2.y, pulley2.radius+10, PI, 0);
     drawArc(pulley3.x, pulley3.y, pulley3.radius+10, PI, 0);
@@ -492,64 +504,67 @@ function drawP4() {
 
     let textPosition;
     let posHeight = 380;
-    let velHeight = 460;
-    let accHeight = 540;
+    let velHeight = 480;
+    let accHeight = 580;
 
+    textLine("Position:", 400, posHeight-20, 14, NORMAL);
     textPosition = textLine("L", 420, posHeight, 14, NORMAL);
     textPosition = textLine("1", textPosition, posHeight+3, 10, NORMAL);
     textPosition = textLine(" = R", textPosition, posHeight, 14, NORMAL);
     textPosition = textLine("1", textPosition, posHeight+3, 10, NORMAL);
-    textPosition = textLine(" + 2S", textPosition, posHeight, 14, NORMAL);
+    textPosition = textLine(" + 2s", textPosition, posHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, posHeight+3, 10, NORMAL);
-    textPosition = textLine(" + S", textPosition, posHeight, 14, NORMAL);
+    textPosition = textLine(" + s", textPosition, posHeight, 14, NORMAL);
     textLine("b", textPosition, posHeight+3, 10, NORMAL);
     textPosition = textLine("L", 420, posHeight+20, 14, NORMAL);
     textPosition = textLine("2", textPosition, posHeight+23, 10, NORMAL);
     textPosition = textLine(" = R", textPosition, posHeight+20, 14, NORMAL);
     textPosition = textLine("2", textPosition, posHeight+23, 10, NORMAL);
-    textPosition = textLine(" + (h - S", textPosition, posHeight+20, 14, NORMAL);
+    textPosition = textLine(" + (h - s", textPosition, posHeight+20, 14, NORMAL);
     textPosition = textLine("b", textPosition, posHeight+23, 10, NORMAL);
-    textPosition = textLine(") + (S", textPosition, posHeight+20, 14, NORMAL);
+    textPosition = textLine(") + (s", textPosition, posHeight+20, 14, NORMAL);
     textPosition = textLine("c", textPosition, posHeight+23, 10, NORMAL);
-    textPosition = textLine(" - S", textPosition, posHeight+20, 14, NORMAL);
+    textPosition = textLine(" - s", textPosition, posHeight+20, 14, NORMAL);
     textPosition = textLine("b", textPosition, posHeight+23, 10, NORMAL);
     textLine(")", textPosition, posHeight+20, 14, NORMAL);
     textPosition = textLine("L", 420, posHeight+40, 14, NORMAL);
     textPosition = textLine("3", textPosition, posHeight+43, 10, NORMAL);
     textPosition = textLine(" = R", textPosition, posHeight+40, 14, NORMAL);
     textPosition = textLine("3", textPosition, posHeight+43, 10, NORMAL);
-    textPosition = textLine(" + (h - S", textPosition, posHeight+40, 14, NORMAL);
+    textPosition = textLine(" + (h - s", textPosition, posHeight+40, 14, NORMAL);
     textPosition = textLine("c", textPosition, posHeight+43, 10, NORMAL);
-    textPosition = textLine(") + (S", textPosition, posHeight+40, 14, NORMAL);
+    textPosition = textLine(") + (s", textPosition, posHeight+40, 14, NORMAL);
     textPosition = textLine("d", textPosition, posHeight+43, 10, NORMAL);
-    textPosition = textLine(" - S", textPosition, posHeight+40, 14, NORMAL);
+    textPosition = textLine(" - s", textPosition, posHeight+40, 14, NORMAL);
     textPosition = textLine("c", textPosition, posHeight+43, 10, NORMAL);
     textLine(")", textPosition, posHeight+40, 14, NORMAL);
 
-    textPosition = textLine("0 = 2V", 420, velHeight, 14, NORMAL);
+    textLine("Velocity:", 400, velHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = 2v", 420, velHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, velHeight+3, 10, NORMAL);
-    textPosition = textLine(" + V", textPosition, velHeight, 14, NORMAL);
+    textPosition = textLine(" + v", textPosition, velHeight, 14, NORMAL);
     textLine("b", textPosition, velHeight+3, 10, NORMAL);
-    textPosition = textLine("0 = V", 420, velHeight+20, 14, NORMAL);
+    textPosition = textLine("0 = v", 420, velHeight+20, 14, NORMAL);
     textPosition = textLine("c", textPosition, velHeight+23, 10, NORMAL);
-    textPosition = textLine(" - 2V", textPosition, velHeight+20, 14, NORMAL);
+    textPosition = textLine(" - 2v", textPosition, velHeight+20, 14, NORMAL);
     textLine("b", textPosition, velHeight+23, 10, NORMAL);
-    textPosition = textLine("0 = V", 420, velHeight+40, 14, NORMAL);
+    textPosition = textLine("0 = v", 420, velHeight+40, 14, NORMAL);
     textPosition = textLine("d", textPosition, velHeight+43, 10, NORMAL);
-    textPosition = textLine(" - 2V", textPosition, velHeight+40, 14, NORMAL);
+    textPosition = textLine(" - 2v", textPosition, velHeight+40, 14, NORMAL);
     textLine("c", textPosition, velHeight+43, 10, NORMAL);
 
-    textPosition = textLine("0 = 2A", 420, accHeight, 14, NORMAL);
+    textLine("Acceleration:", 400, accHeight-20, 14, NORMAL);
+    textPosition = textLine("0 = 2a", 420, accHeight, 14, NORMAL);
     textPosition = textLine("a", textPosition, accHeight+3, 10, NORMAL);
-    textPosition = textLine(" + A", textPosition, accHeight, 14, NORMAL);
+    textPosition = textLine(" + a", textPosition, accHeight, 14, NORMAL);
     textLine("b", textPosition, accHeight+3, 10, NORMAL);
-    textPosition = textLine("0 = A", 420, accHeight+20, 14, NORMAL);
+    textPosition = textLine("0 = a", 420, accHeight+20, 14, NORMAL);
     textPosition = textLine("c", textPosition, accHeight+23, 10, NORMAL);
-    textPosition = textLine(" - 2A", textPosition, accHeight+20, 14, NORMAL);
+    textPosition = textLine(" - 2a", textPosition, accHeight+20, 14, NORMAL);
     textLine("b", textPosition, accHeight+23, 10, NORMAL);
-    textPosition = textLine("0 = A", 420, accHeight+40, 14, NORMAL);
+    textPosition = textLine("0 = a", 420, accHeight+40, 14, NORMAL);
     textPosition = textLine("d", textPosition, accHeight+43, 10, NORMAL);
-    textPosition = textLine(" - 2A", textPosition, accHeight+40, 14, NORMAL);
+    textPosition = textLine(" - 2a", textPosition, accHeight+40, 14, NORMAL);
     textLine("c", textPosition, accHeight+43, 10, NORMAL);
   }
 
@@ -655,10 +670,10 @@ function drawDimension(yStart, yEnd, x, name, subscript, colour = color(120, 0, 
   line(x-tailLength, yEnd, x+tailLength, yEnd);
 
   textAlign(LEFT, CENTER);
-  textSize(14);
+  textSize(17);
   text(name, x-5, dimMiddle);
-  textSize(10)
-  text(subscript, x+3, dimMiddle+3);
+  textSize(12);
+  text(subscript, x+2, dimMiddle+4);
 }
 
 /**
@@ -708,10 +723,10 @@ function drawUniversalDimension(xStart, yStart, xEnd, yEnd, name, subscript, col
   line(xEndCorner1, yEndCorner1, xEndCorner2, yEndCorner2);
 
   textAlign(LEFT, CENTER);
-  textSize(14);
+  textSize(17);
   text(name, xText-5, yText);
-  textSize(10)
-  text(subscript, xText+3, yText+3);
+  textSize(12);
+  text(subscript, xText+2, yText+4);
 }
 
 /**
