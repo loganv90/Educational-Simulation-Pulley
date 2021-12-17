@@ -1,1 +1,1 @@
-# Pulley-Simulation
+# Educational-Simulation-Pulley
